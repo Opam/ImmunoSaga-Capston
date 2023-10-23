@@ -5,13 +5,13 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainPanel;
-    public GameObject optionPanel;
+    public GameObject settingPanel;
     public GameObject creditPanel;
 
     void Start()
     {
         mainPanel.SetActive(true);
-        optionPanel.SetActive(false);
+        settingPanel.SetActive(false);
         creditPanel.SetActive(false);
     }
 
@@ -20,17 +20,23 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void OptionPanel()
+    public void MainPanel()
+    {
+        mainPanel.SetActive(true);
+        settingPanel.SetActive(false);
+        creditPanel.SetActive(false);
+    }
+    public void SettingPanel()
     {
         mainPanel.SetActive(false);
-        optionPanel.SetActive(true);
+        settingPanel.SetActive(true);
         creditPanel.SetActive(false);
     }    
 
     public void CreditPanel()
     {
         mainPanel.SetActive(false);
-        optionPanel.SetActive(false);
+        settingPanel.SetActive(false);
         creditPanel.SetActive(true);
     }
 
