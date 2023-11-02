@@ -61,7 +61,6 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void ReceiveDamage(float damage)
     {
-        Debug.Log("Megalodon");
         health = health - damage;
         animator.Play("hurt");
 
