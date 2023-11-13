@@ -20,17 +20,17 @@ public class MakeButton : MonoBehaviour
 
     private void AttachCallBack(string btn)
     {
-        if (btn.CompareTo("MeeleBtn") == 0)
+        if (gameObject.name == "MeeleBtn")
         {
             hero.GetComponent<FighterAction>().SelectAttack("meele");
         }
-        else if (btn.CompareTo("RangeBtn") == 0)
+        else if (gameObject.name == "RangeBtn")
         {
             hero.GetComponent<FighterAction>().SelectAttack("range");
         }
-        else if (btn.CompareTo("DefBtn") == 0)
+        else if (gameObject.name == "DefBtn")
         {
-            hero.GetComponent<FighterAction>().SelectAttack("def");
+            hero.GetComponent<FighterAction>().SelectAttack("defense");
         }
         else
         {

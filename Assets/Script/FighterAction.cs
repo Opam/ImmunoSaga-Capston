@@ -14,7 +14,7 @@ public class FighterAction : MonoBehaviour
     private GameObject rangePrefab;
 
     [SerializeField]
-    private GameObject defPrefab;
+    private GameObject defensePrefab;
 
     [SerializeField]
     private GameObject healPrefab;
@@ -39,17 +39,20 @@ public class FighterAction : MonoBehaviour
         {
             victim = enemy;
         }
-        if (btn.CompareTo("meele") == 0)
+        if (btn == "meele")
         {
+            Debug.Log("melee");
             meelePrefab.GetComponent<AttackScript>().Attack(victim);
         }
-        else if (btn.CompareTo("range") == 0)
+        else if (btn == "range")
         {
+            Debug.Log("range");
             rangePrefab.GetComponent<AttackScript>().Attack(victim);
         }
-        else if (btn.CompareTo("def") == 0)
+        else if (btn == ("defense"))
         {
-            def.GetComponent<AttackScript>().Attack(victim);
+            Debug.Log("defense");
+            defensePrefab.GetComponent<AttackScript>().Defense(victim);
         }
         else
         {

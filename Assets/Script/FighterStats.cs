@@ -11,10 +11,10 @@ public class FighterStats : MonoBehaviour, IComparable
     private Animator animator;
 
     [SerializeField]
-    private GameObject healthFill;
+    private Image healthFill;
 
     [SerializeField]
-    private GameObject magicFill;
+    private Image magicFill;
 
     [Header("Stats")]
     public float health;
@@ -45,13 +45,15 @@ public class FighterStats : MonoBehaviour, IComparable
 
     private GameObject GameControllerObj;
 
+    private bool isDefense;
+
     void Awake()
     {
-        healthTransform = healthFill.GetComponent<RectTransform>();
-        healthScale = healthFill.transform.localScale;
+        //healthTransform = healthFill.GetComponent<RectTransform>();
+        //healthScale = healthFill.transform.localScale;
 
-        magicTransform = magicFill.GetComponent<RectTransform>();
-        magicScale = magicFill.transform.localScale;
+        //magicTransform = magicFill.GetComponent<RectTransform>();
+        //magicScale = magicFill.transform.localScale;
 
         startHealth = health;
         startMagic = magic;
@@ -61,32 +63,47 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void ReceiveDamage(float damage)
     {
-        health = health - damage;
-        animator.Play("hurt");
-
-        //set damage text
-
-        if (health <= 0)
+        if (!isDefense)
         {
-            dead = true;
-            gameObject.tag = "Dead";
-            Destroy(healthFill);
-            Destroy(gameObject);
+            health = health - damage;
+            animator.Play("hurt");
+
+            //set damage text
+
+            if (health <= 0)
+            {
+                dead = true;
+                gameObject.tag = "Dead";
+                Destroy(healthFill);
+                Destroy(gameObject);
+            }
+
+            else if (damage > 0)
+            {
+                //xNewHealthScale = healthScale.x * (health / startHealth);
+                //healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
+                float hlth = health / startHealth;
+                healthFill.fillAmount = hlth;
+            }
+
+            if (damage > 0)
+            {
+                GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+                GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
+            }
+
+
         }
 
-        else if (damage > 0)
-        {
-            xNewHealthScale = healthScale.x * (health / startHealth);
-            healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
-        }
+        isDefense = false;
 
-        if(damage > 0)
-        {
-            GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
-            GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
-        }
-        
         Invoke("ContinueGame", 2);
+
+    }
+
+    public void SetDefense()
+    {
+        isDefense = true;
     }
 
     public void updateMagicFill(float cost)
@@ -94,8 +111,10 @@ public class FighterStats : MonoBehaviour, IComparable
         if (cost > 0)
         {
             magic = magic - cost;
-            xNewMagicScale = magicScale.x * (magic / startMagic);
-            magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
+            //xNewMagicScale = magicScale.x * (magic / startMagic);
+            //magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
+            float mgc = magic / startMagic;
+            magicFill.fillAmount = mgc;
         }
     }
 
@@ -122,6 +141,4 @@ public class FighterStats : MonoBehaviour, IComparable
         int nex = nextActTurn.CompareTo(((FighterStats)otherStats).nextActTurn);
         return nex;
     }
-
-
 }

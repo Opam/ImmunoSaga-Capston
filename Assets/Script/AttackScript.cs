@@ -31,6 +31,11 @@ public class AttackScript : MonoBehaviour
     private FighterStats targetStats;
     private float damage = 0.0f;
 
+    public void SetOwner(GameObject newOwner)
+    {
+        owner = newOwner;
+        attackerStats = owner.GetComponent<FighterStats>();
+    }
     public void Attack(GameObject victim)
     {
         attackerStats = owner.GetComponent<FighterStats>();
@@ -57,6 +62,17 @@ public class AttackScript : MonoBehaviour
         {
             Invoke("SkipTurnContinueGame", 2);
         }
+    }
+
+    public void Defense(GameObject victim)
+    {
+        owner.GetComponent<Animator>().Play(animationName);
+        Debug.Log("test");
+        attackerStats = owner.GetComponent<FighterStats>();
+        targetStats = victim.GetComponent<FighterStats>();
+
+        attackerStats.SetDefense();
+        targetStats.ReceiveDamage(0);
     }
     void SkipTurnContinueGame()
     {
