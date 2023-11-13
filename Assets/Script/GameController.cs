@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     private GameObject battleMenu;
 
     public Text battleText;
+
+    public TurnPhase turnPhase;
     void Start()
     {
         fighterStats = new List<FighterStats>();
@@ -46,12 +48,14 @@ public class GameController : MonoBehaviour
             if (currentUnit.tag == "Hero")
             {
                 this.battleMenu.SetActive(true);
+                turnPhase.DestroyFirstImage();
             }
             else
             {
                 this.battleMenu.SetActive(false);
                 string AttackType = Random.Range(0, 2) == 1 ? "meele" : "range";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(AttackType);
+                turnPhase.DestroyFirstImage();
             }
         }
         else

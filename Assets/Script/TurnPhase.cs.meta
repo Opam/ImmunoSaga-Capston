@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 93df52b586caa2c4f94573d3139e7fda
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - turnContainer: {instanceID: 0}
+  - playerImagePrefabs: {fileID: 2894402928466111279, guid: 0f4ac65fd48fec247ae4f11bd15001d9, type: 3}
+  - enemyImagePrefabs: {fileID: 1337992727892705090, guid: 08b80029d5ae1fe4cb7cdd01adf62d82, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
