@@ -8,11 +8,17 @@ public class MainMenu : MonoBehaviour
     public GameObject settingPanel;
     public GameObject creditPanel;
 
+    public GameObject btn;
+
+    [SerializeField]
+    private string berkedip;
+
     void Start()
     {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         creditPanel.SetActive(false);
+        btn.GetComponent<Animator>().Play(berkedip);
     }
 
     void Update()
@@ -38,10 +44,5 @@ public class MainMenu : MonoBehaviour
         mainPanel.SetActive(false);
         settingPanel.SetActive(false);
         creditPanel.SetActive(true);
-    }
-
-    public void exitBtn()
-    {
-        Application.Quit();
     }
 }

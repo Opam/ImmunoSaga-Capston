@@ -1376,6 +1376,7 @@ GameObject:
   - component: {fileID: 690589475}
   - component: {fileID: 690589474}
   - component: {fileID: 690589473}
+  - component: {fileID: 690589476}
   m_Layer: 5
   m_Name: BtnPlay
   m_TagString: Untagged
@@ -1496,6 +1497,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690589471}
   m_CullTransparentMesh: 1
+--- !u!95 &690589476
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690589471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b24a724165d2f584499988afb1547bd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &702109819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,6 +2382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468242557}
   - component: {fileID: 1468242556}
+  - component: {fileID: 1468242558}
   m_Layer: 0
   m_Name: ScriptManagement
   m_TagString: Untagged
@@ -2382,6 +2405,8 @@ MonoBehaviour:
   mainPanel: {fileID: 1618272807}
   settingPanel: {fileID: 1081693562}
   creditPanel: {fileID: 1429921543}
+  btn: {fileID: 690589471}
+  berkedip: 
 --- !u!4 &1468242557
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,6 +2422,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1468242558
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468242555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b24a724165d2f584499988afb1547bd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1473552566
 GameObject:
   m_ObjectHideFlags: 0
