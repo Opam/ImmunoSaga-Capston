@@ -1,2 +1,2 @@
 # ImmunoSaga-Capston
-Capston Project Game Development Infinite Learning
+Capston Project Game Development at Infinite Learning
