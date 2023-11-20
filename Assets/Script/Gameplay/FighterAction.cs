@@ -41,17 +41,14 @@ public class FighterAction : MonoBehaviour
         }
         if (btn == "meele")
         {
-            Debug.Log("melee");
             meelePrefab.GetComponent<AttackScript>().Attack(victim);
         }
         else if (btn == "range")
         {
-            Debug.Log("range");
             rangePrefab.GetComponent<AttackScript>().Attack(victim);
         }
         else if (btn == ("defense"))
         {
-            Debug.Log("defense");
             defensePrefab.GetComponent<AttackScript>().Defense(victim);
         }
         else

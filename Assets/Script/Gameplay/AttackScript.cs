@@ -67,7 +67,6 @@ public class AttackScript : MonoBehaviour
     public void Defense(GameObject victim)
     {
         owner.GetComponent<Animator>().Play(animationName);
-        Debug.Log("test");
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
 

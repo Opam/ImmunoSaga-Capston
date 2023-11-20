@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public Text battleText;
 
     public TurnPhase turnPhase;
+
     void Start()
     {
         fighterStats = new List<FighterStats>();
@@ -39,12 +40,14 @@ public class GameController : MonoBehaviour
         battleText.gameObject.SetActive(false);
         FighterStats currentFighterStats = fighterStats[0];
         fighterStats.Remove(currentFighterStats);
+
         if (!currentFighterStats.GetDead())
         {
             GameObject currentUnit = currentFighterStats.gameObject;
             currentFighterStats.CalculateNextTurn(currentFighterStats.nextActTurn);
             fighterStats.Add(currentFighterStats);
             fighterStats.Sort();
+
             if (currentUnit.tag == "Hero")
             {
                 this.battleMenu.SetActive(true);

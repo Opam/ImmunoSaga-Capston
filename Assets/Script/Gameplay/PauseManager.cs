@@ -29,6 +29,6 @@ public class PauseManager : MonoBehaviour
 
     public void MenuUtama()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene("MainMenu");
     }
 }

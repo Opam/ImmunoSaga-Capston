@@ -46,6 +46,8 @@ public class FighterStats : MonoBehaviour, IComparable
     private GameObject GameControllerObj;
 
     private bool isDefense;
+    public GameObject panelLose;
+    public GameObject panelWin;
 
     void Awake()
     {
@@ -72,6 +74,15 @@ public class FighterStats : MonoBehaviour, IComparable
 
             if (health <= 0)
             {
+                if (gameObject.tag == "Hero" && health <= 0)
+                {
+                    panelLose.SetActive(true);
+                }
+                else if (gameObject.tag == "Enemy" && health <= 0)
+                {
+                    panelWin.SetActive(true);
+                }
+
                 dead = true;
                 gameObject.tag = "Dead";
                 Destroy(healthFill);
@@ -92,14 +103,13 @@ public class FighterStats : MonoBehaviour, IComparable
                 GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
             }
 
+            isDefense = false;
+
+            Invoke("ContinueGame", 2);
 
         }
-
-        isDefense = false;
-
-        Invoke("ContinueGame", 2);
-
     }
+
 
     public void SetDefense()
     {
