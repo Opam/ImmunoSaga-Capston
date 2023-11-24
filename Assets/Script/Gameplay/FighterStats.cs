@@ -102,12 +102,11 @@ public class FighterStats : MonoBehaviour, IComparable
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
             }
-
-            isDefense = false;
-
-            Invoke("ContinueGame", 2);
-
         }
+
+        isDefense = false;
+
+        Invoke("ContinueGame", 2);
     }
 
 
