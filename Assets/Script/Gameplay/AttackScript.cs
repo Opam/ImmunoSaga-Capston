@@ -73,6 +73,26 @@ public class AttackScript : MonoBehaviour
         attackerStats.SetDefense();
         targetStats.ReceiveDamage(0);
     }
+
+    public void Healing(GameObject victim)
+    {
+        owner.GetComponent<Animator>().Play(animationName);
+        attackerStats = owner.GetComponent<FighterStats>();
+        targetStats = owner.GetComponent<FighterStats>();
+
+        if (attackerStats.magic >= magicCost)
+        {
+            float healingAmount = attackerStats.magicRange / 2;
+
+            targetStats.UpdateHealthFill(healingAmount);
+
+            attackerStats.updateMagicFill(magicCost);
+        }
+        else
+        {
+            Invoke("SkipTurnContinueGame", 2);
+        }
+    }
     void SkipTurnContinueGame()
     {
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();

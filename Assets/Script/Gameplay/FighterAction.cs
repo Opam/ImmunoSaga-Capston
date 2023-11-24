@@ -17,7 +17,7 @@ public class FighterAction : MonoBehaviour
     private GameObject defensePrefab;
 
     [SerializeField]
-    private GameObject healPrefab;
+    private GameObject healingPrefab;
 
     [SerializeField]
     private Sprite faceIcon;
@@ -51,9 +51,9 @@ public class FighterAction : MonoBehaviour
         {
             defensePrefab.GetComponent<AttackScript>().Defense(victim);
         }
-        else
+        else if (btn == ("heal"))
         {
-            /* Debug.Log("Healing");*/
+            healingPrefab.GetComponent<AttackScript>().Healing(victim);
         }
     }
 }

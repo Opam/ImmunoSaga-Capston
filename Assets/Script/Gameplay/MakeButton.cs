@@ -32,7 +32,7 @@ public class MakeButton : MonoBehaviour
         {
             hero.GetComponent<FighterAction>().SelectAttack("defense");
         }
-        else
+        else if (gameObject.name == "HealBtn")
         {
             hero.GetComponent<FighterAction>().SelectAttack("heal");
         }

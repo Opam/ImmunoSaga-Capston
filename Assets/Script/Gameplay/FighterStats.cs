@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Unity.Mathematics;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
@@ -109,10 +110,37 @@ public class FighterStats : MonoBehaviour, IComparable
         Invoke("ContinueGame", 2);
     }
 
+    public void ReceiveHealing(int healingAmount)
+    {
+        health += healingAmount;
+
+        if (health > startHealth)
+        {
+            health = startHealth;
+        }
+    }
 
     public void SetDefense()
     {
         isDefense = true;
+    }
+
+    public void UpdateHealthFill(float healingAmount)
+    {
+        health += healingAmount;
+
+        if (health > startHealth)
+        {
+            health = startHealth;
+        }
+
+        //resize health bar
+        //healthTransform = healthFill.GetComponent<RectTransform>();
+        //healthScale = healthFill.transform.localScale;
+        //xNewHealthScale = healthScale.x * (health / startHealth);
+        //healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
+        float hlth = health / startHealth;
+        healthFill.fillAmount = hlth;
     }
 
     public void updateMagicFill(float cost)
