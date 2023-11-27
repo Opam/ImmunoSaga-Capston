@@ -35,17 +35,20 @@ public class FighterAction : MonoBehaviour
     public void SelectAttack(string btn)
     {
         GameObject victim = hero;
+        bool isHero;
+        isHero = false;
         if (tag == "Hero")
         {
             victim = enemy;
+            isHero = true;
         }
         if (btn == "meele")
         {
-            meelePrefab.GetComponent<AttackScript>().Attack(victim);
+            meelePrefab.GetComponent<AttackScript>().Attack(victim, isHero);
         }
         else if (btn == "range")
         {
-            rangePrefab.GetComponent<AttackScript>().Attack(victim);
+            rangePrefab.GetComponent<AttackScript>().Attack(victim, isHero);
         }
         else if (btn == ("defense"))
         {

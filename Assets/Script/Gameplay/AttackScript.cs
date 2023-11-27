@@ -36,14 +36,23 @@ public class AttackScript : MonoBehaviour
         owner = newOwner;
         attackerStats = owner.GetComponent<FighterStats>();
     }
-    public void Attack(GameObject victim)
+    public void Attack(GameObject victim, bool isHero)
     {
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
 
         if (attackerStats.magic >= magicCost)
         {
-            
+            if (isHero) 
+            {
+                VFXManager.instance.SpawnVFX(0, victim.transform);
+            }
+
+            if (!isHero)
+            {
+                VFXManager.instance.SpawnVFX(1, victim.transform);
+            }
+
             float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
 
             damage = multiplier * attackerStats.meele;
