@@ -37,4 +37,6 @@ public class MakeButton : MonoBehaviour
             hero.GetComponent<FighterAction>().SelectAttack("heal");
         }
     }
+
+
 }

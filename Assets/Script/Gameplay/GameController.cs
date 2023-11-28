@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator;
+
     private List<FighterStats> fighterStats;
 
     [SerializeField]
@@ -17,6 +20,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        animator.Play("getar");
+
         fighterStats = new List<FighterStats>();
 
         GameObject hero = GameObject.FindGameObjectWithTag("Hero");
