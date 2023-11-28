@@ -88,6 +88,7 @@ public class AttackScript : MonoBehaviour
         owner.GetComponent<Animator>().Play(animationName);
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = owner.GetComponent<FighterStats>();
+        VFXManager.instance.SpawnVFX(2, owner.transform);
 
         if (attackerStats.magic >= magicCost)
         {
@@ -97,10 +98,8 @@ public class AttackScript : MonoBehaviour
 
             attackerStats.updateMagicFill(magicCost);
         }
-        else
-        {
-            Invoke("SkipTurnContinueGame", 2);
-        }
+        
+        Invoke("SkipTurnContinueGame", 2);
     }
     void SkipTurnContinueGame()
     {

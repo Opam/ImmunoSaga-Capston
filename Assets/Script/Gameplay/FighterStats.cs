@@ -68,6 +68,7 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         if (!isDefense)
         {
+
             health = health - damage;
             animator.Play("hurt");
 
