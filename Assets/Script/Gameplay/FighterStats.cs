@@ -50,6 +50,9 @@ public class FighterStats : MonoBehaviour, IComparable
     public GameObject panelLose;
     public GameObject panelWin;
 
+    public int manaRegenCount;
+    public int maxManaRegenCount = 3;
+
     void Awake()
     {
         //healthTransform = healthFill.GetComponent<RectTransform>();
@@ -109,6 +112,18 @@ public class FighterStats : MonoBehaviour, IComparable
         isDefense = false;
 
         Invoke("ContinueGame", 2);
+    }
+
+    public void RegenerateMana(int amount)
+    {
+        if (manaRegenCount < maxManaRegenCount)
+        {
+            magic += amount;
+            manaRegenCount++;
+
+            float mgc = magic / startMagic;
+            magicFill.fillAmount = mgc;
+        }
     }
 
     public void ReceiveHealing(int healingAmount)

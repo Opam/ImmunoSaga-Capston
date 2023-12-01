@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         animator.Play("getar");
+        animator.Play("getar4");
+        animator.Play("getar2");
 
         fighterStats = new List<FighterStats>();
 
@@ -61,7 +63,7 @@ public class GameController : MonoBehaviour
             else
             {
                 this.battleMenu.SetActive(false);
-                string AttackType = Random.Range(0, 2) == 1 ? "meele" : "range";
+                string AttackType = "meele";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(AttackType);
                 turnPhase.DestroyFirstImage();
             }

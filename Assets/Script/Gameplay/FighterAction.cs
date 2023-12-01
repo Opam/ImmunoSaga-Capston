@@ -48,7 +48,10 @@ public class FighterAction : MonoBehaviour
         }
         else if (btn == "range")
         {
-            rangePrefab.GetComponent<AttackScript>().Attack(victim, isHero);
+            if (hero.GetComponent<FighterStats>().manaRegenCount < hero.GetComponent<FighterStats>().maxManaRegenCount)
+            {
+                hero.GetComponent<FighterStats>().RegenerateMana(10);
+            }
         }
         else if (btn == ("defense"))
         {

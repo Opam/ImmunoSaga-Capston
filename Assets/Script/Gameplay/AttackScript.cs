@@ -56,6 +56,7 @@ public class AttackScript : MonoBehaviour
             float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
 
             damage = multiplier * attackerStats.meele;
+
             if (magicAttack)
             {
                 damage = multiplier * attackerStats.magicRange;
