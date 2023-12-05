@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackScript : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class AttackScript : MonoBehaviour
 
         if (attackerStats.magic >= magicCost)
         {
-            if (isHero) 
+            if (isHero)
             {
                 VFXManager.instance.SpawnVFX(0, victim.transform);
             }
@@ -76,7 +77,6 @@ public class AttackScript : MonoBehaviour
 
     public void Defense(GameObject victim)
     {
-        owner.GetComponent<Animator>().Play(animationName);
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
 
@@ -86,7 +86,6 @@ public class AttackScript : MonoBehaviour
 
     public void Healing(GameObject victim)
     {
-        owner.GetComponent<Animator>().Play(animationName);
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = owner.GetComponent<FighterStats>();
         VFXManager.instance.SpawnVFX(2, owner.transform);
@@ -99,7 +98,7 @@ public class AttackScript : MonoBehaviour
 
             attackerStats.updateMagicFill(magicCost);
         }
-        
+
         Invoke("SkipTurnContinueGame", 2);
     }
     void SkipTurnContinueGame()

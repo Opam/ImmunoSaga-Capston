@@ -10,6 +10,11 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void story()
+    {
+        SceneManager.LoadScene("Story");
+    }
+
     public void gameplay()
     {
         SceneManager.LoadScene("Gameplay");
