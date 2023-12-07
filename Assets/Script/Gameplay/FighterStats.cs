@@ -8,6 +8,7 @@ using Unity.Mathematics;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
+
     [SerializeField]
     private Animator animator;
 
@@ -116,6 +117,7 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void RegenerateMana(int amount)
     {
+        
         if (manaRegenCount < maxManaRegenCount)
         {
             magic += amount;

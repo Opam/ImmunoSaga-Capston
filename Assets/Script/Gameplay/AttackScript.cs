@@ -101,6 +101,21 @@ public class AttackScript : MonoBehaviour
 
         Invoke("SkipTurnContinueGame", 2);
     }
+
+    public void RestMana(GameObject victim)
+    {
+        attackerStats = owner.GetComponent<FighterStats>();
+        targetStats = owner.GetComponent<FighterStats>();
+        VFXManager.instance.SpawnVFX(3, owner.transform);
+
+        if (owner.GetComponent<FighterStats>().manaRegenCount < owner.GetComponent<FighterStats>().maxManaRegenCount)
+        {
+            owner.GetComponent<FighterStats>().RegenerateMana(10);
+        }
+
+        Invoke("SkipTurnContinueGame", 2);
+    }
+
     void SkipTurnContinueGame()
     {
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();

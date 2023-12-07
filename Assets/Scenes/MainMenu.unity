@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\n\nGame Designer\n\nGame Progammer\n\nGame Art\n\n\nSpecial
+  m_text: "Project Manager\n\nGame Designer\n\nGame Progammer\n\nGame Art\n\n\n\nSpecial
     Thanks \n\n\nMusic"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac29f9b213bfd5c45ac2e6e054743b3e, type: 2}
@@ -419,28 +419,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Intan Viona Margareta
+  m_text: 'Abdul Hakim Naufal Nugroho
 
 
     Abdul Hakim Naufal Nugroho
 
 
-    Syadu Budi
-    Kusuma
+    Syadu
+    Budi Kusuma
 
 
     Zulvana Itsna Puteri
 
     Wahyu Budi Prayogo
 
+    Intan Viona
+    Margareta
 
-    Rahmat Jamal
-    Akbar
+
+    Rahmat Jamal Akbar
 
     Winner Insanjaya
 
 
-    DJ Jamal Fvnky Rimek ft AOKA'
+    DJ Jamal Fvnky
+    Rimek ft AOKA'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac29f9b213bfd5c45ac2e6e054743b3e, type: 2}
   m_sharedMaterial: {fileID: 7101707746798361458, guid: ac29f9b213bfd5c45ac2e6e054743b3e, type: 2}
