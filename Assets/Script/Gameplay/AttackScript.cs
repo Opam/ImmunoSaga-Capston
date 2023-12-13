@@ -77,9 +77,10 @@ public class AttackScript : MonoBehaviour
 
     public void Defense(GameObject victim)
     {
+        VFXManager.instance.SpawnVFX(4, owner.transform);
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
-
+        
         attackerStats.SetDefense();
         targetStats.ReceiveDamage(0);
     }
