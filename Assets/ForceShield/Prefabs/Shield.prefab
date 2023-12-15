@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23268880034199270}
   - component: {fileID: 135900357308531450}
   - component: {fileID: 114638851674457474}
+  - component: {fileID: 6188575759596336153}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -120,3 +121,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collisionTag:
   - Laser
+--- !u!114 &6188575759596336153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444638899229730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a2fcae40941654493ffb6ce9d5c3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 2.5

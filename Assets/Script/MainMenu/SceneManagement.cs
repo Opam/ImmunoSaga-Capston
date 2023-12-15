@@ -19,4 +19,9 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+    public void prolog()
+    {
+        SceneManager.LoadScene("Prolog");
+    }
 }

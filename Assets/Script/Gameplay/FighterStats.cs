@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using Unity.Mathematics;
 
 public class FighterStats : MonoBehaviour, IComparable
@@ -72,6 +71,11 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         if (!isDefense)
         {
+            if (isDefense)
+            {
+                DisableShieldVFX();
+            }
+
 
             health = health - damage;
             animator.Play("hurt");
@@ -108,11 +112,21 @@ public class FighterStats : MonoBehaviour, IComparable
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
             }
+
         }
 
         isDefense = false;
 
         Invoke("ContinueGame", 2);
+    }
+
+    public void DisableShieldVFX()
+    {
+        if (AttackScript.shieldVFX != null)
+        {
+            Debug.Log("VFX Hilang");
+            AttackScript.shieldVFX.SetActive(false);
+        }
     }
 
     public void RegenerateMana(int amount)

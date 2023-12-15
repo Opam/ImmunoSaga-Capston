@@ -13,8 +13,8 @@ public class VFXManager : MonoBehaviour
         instance = this;
     }
 
-    public void SpawnVFX(int index, Transform position)
+    public GameObject SpawnVFX(int index, Transform position)
     {
-        Instantiate(vfx[index], position.position,Quaternion.identity);
+        return Instantiate(vfx[index], position.position, Quaternion.identity);
     }
 }

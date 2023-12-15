@@ -32,6 +32,10 @@ public class AttackScript : MonoBehaviour
     private FighterStats targetStats;
     private float damage = 0.0f;
 
+    public static GameObject shieldVFX;
+
+    public static bool isDefense = false;
+
     public void SetOwner(GameObject newOwner)
     {
         owner = newOwner;
@@ -75,9 +79,10 @@ public class AttackScript : MonoBehaviour
         }
     }
 
+
     public void Defense(GameObject victim)
     {
-        VFXManager.instance.SpawnVFX(4, owner.transform);
+        shieldVFX = VFXManager.instance.SpawnVFX(4, owner.transform);
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
         
